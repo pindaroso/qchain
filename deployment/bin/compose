@@ -2,8 +2,7 @@
 
 export COMPOSE_PROJECT_NAME=qchain
 
-DEV="network | migrate | start"
-OPTIONS="dev [$DEV] | clean | deploy <host> | web [migrate]"
+OPTIONS="dev [migrate] | clean | deploy <host>"
 
 cd src
 
@@ -14,23 +13,20 @@ case "$1" in
         docker-compose up -d
 
         case "$1" in
-            "network")
-                docker exec -it web npm run network
-                ;;
-            "network")
+            "migrate")
                 docker exec -it web npm run migrate
                 ;;
-            "start")
-                docker exec -it web npm start
-                ;;
             *)
-                echo "Usage: ./deployment/bin/compose dev [$OPTIONS_DEV]"
+                echo "Usage: ./deployment/bin/compose dev [migrate]"
                 ;;
         esac
         ;;
     "bounce")
         docker-compose build
         docker-compose up -d
+        ;;
+    "deploy")
+        echo "Not yet implemented..."
         ;;
     "*")
         echo "Usage: ./deployment/bin/compose [$OPTIONS]"

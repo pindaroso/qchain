@@ -9,7 +9,7 @@ module.exports = {
       network_id: '*' // Match any network id
     },
     testnet: { // Connects to a public testnet running with geth on port 8545
-      host: 'localhost',
+      host: 'geth',
       port: 8545,
       network_id: '*' // Match any network id
     }

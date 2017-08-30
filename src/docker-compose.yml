@@ -3,7 +3,7 @@ version: "3"
 services:
   web:
     build: web
-    command: ./command.sh
+    command: bash -c "npm run build && npm start"
     volumes:
       - ./web/contracts:/code/web/contracts
       - ./web/migrations:/code/web/migrations
