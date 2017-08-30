@@ -1,0 +1,6 @@
+#!/bin/bash
+
+source "$(pwd)/deployment/config/base.env"
+
+docker-compose -f deployment/config/docker-compose.yml build
+docker-compose -f deployment/config/docker-compose.yml up
