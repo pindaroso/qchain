@@ -1,6 +1,38 @@
 #!/bin/bash
 
-source "$(pwd)/deployment/config/base.env"
+export COMPOSE_PROJECT_NAME=qchain
 
-docker-compose -f deployment/config/docker-compose.yml build
-docker-compose -f deployment/config/docker-compose.yml up
+DEV="network | migrate | start"
+OPTIONS="dev [$DEV] | clean | deploy <host> | web [migrate]"
+
+cd src
+
+case "$1" in
+    "dev")
+        shift;
+        docker-compose build
+        docker-compose up -d
+
+        case "$1" in
+            "network")
+                docker exec -it web npm run network
+                ;;
+            "network")
+                docker exec -it web npm run migrate
+                ;;
+            "start")
+                docker exec -it web npm start
+                ;;
+            *)
+                echo "Usage: ./deployment/bin/compose dev [$OPTIONS_DEV]"
+                ;;
+        esac
+        ;;
+    "bounce")
+        docker-compose build
+        docker-compose up -d
+        ;;
+    "*")
+        echo "Usage: ./deployment/bin/compose [$OPTIONS]"
+        ;;
+esac

@@ -1,3 +1,21 @@
 * qchain
 
 Questionnaires on the Ethereum blockchain.
+
+** Requirements
+
+- Docker
+
+** Setup
+
+*Development*
+
+=./deployment/bin/compose dev=
+
+*Production*
+
+=./deployment/bin/compose up=
+
+** Deploying
+
+=./deployment/bin/compose deploy <host>=
