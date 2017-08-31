@@ -7,7 +7,8 @@
         "async": "^2.4.0",
         "react": "^15.5.4",
         "react-dom": "^15.5.4",
-        "web3": "0.20.0"
+        "web3": "0.20.0",
+        "truffle": "3.4.9"
     },
     "devDependencies": {
         "babel-register": "^6.24.1",
