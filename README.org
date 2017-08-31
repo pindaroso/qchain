@@ -1,5 +1,3 @@
-[[file:/screenshot.png]]
-
 [[file:https://travis-ci.org/stilesb/qchain.svg?branch=master]]
 
 * qchain
