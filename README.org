@@ -33,6 +33,7 @@ followed by:
 ** TODO
 
 - [ ] Get candidate list from contract
-- [ ] Save questionnaire text in blockchain
-- [ ] Create contract for creating more questionnaires
+- [ ] Save questionnaire text to contract
+- [ ] Create smart contract for creating more questionnaires
 - [ ] Setup =testnet=
+- [ ] Deploy to production
