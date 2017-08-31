@@ -101,10 +101,13 @@ class App extends Component {
         return (
 	    <div style={styles.wrapper}>
                 <Account/>
-                <p style={styles.question}>Who is your favorite legend?</p>
-		{ this.state.results.length ?
-		    <Results results={this.state.results} refresh={() => { this.refreshCounts() }}/> :
-		    <Poll candidates={candidates} vote={(candidate) => this.castVote(candidate)}/>
+                <p style={styles.question}>Who is your favorite computer programmer?</p>
+		{
+                    this.state.results.length ?
+                        <Results results={this.state.results} refresh={() => {
+                            this.refreshCounts();
+                        }}/> :
+                        <Poll candidates={candidates} vote={(candidate) => this.castVote(candidate)}/>
 		}
 	    </div>);
     }

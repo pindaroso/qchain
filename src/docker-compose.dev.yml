@@ -3,7 +3,7 @@ version: "3"
 services:
   web:
     build: web
-    command: bash -c "npm run migrate && npm run build && npm start"
+    command: bash -c "npm run migrate && npm start"
     container_name: web
     volumes:
       - ./web/contracts:/code/contracts
