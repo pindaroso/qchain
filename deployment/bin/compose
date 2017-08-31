@@ -44,10 +44,17 @@ case "$1" in
         docker-compose build
         docker-compose up -d
         ;;
+    "clean")
+        docker-compose stop || echo "Skipping..."
+        docker-compose rm -f || echo "Skipping..."
+
+        docker-compose -f docker-compose.dev.yml stop || echo "Skipping..."
+        docker-compose -f docker-compose.dev.yml rm -f || echo "Skipping..."
+        ;;
     "deploy")
         echo "Not yet implemented..."
         ;;
-    "*")
+    *)
         echo "Usage: ./deployment/bin/compose [$OPTS]"
         ;;
 esac
