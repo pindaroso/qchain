@@ -43,19 +43,27 @@ export default class Results extends Component {
       };
       results.forEach((candidate)=>{
           var percent = ((candidate.count / totalVotes) * 100).toFixed();
+
           items.push(<li style={styles.items} key={candidate.name}>
-                     <span style={Object.assign({right: (100-percent)+'%'}, styles.items.progress)}></span>
-                     <span style={styles.items.text}><strong>{percent}%</strong> {candidate.name}</span>
+                     <span style={Object.assign({right: (100-percent)+'%'},
+                                                styles.items.progress)}>
+                     </span>
+                     <span style={styles.items.text}>
+                       <strong>{percent}%</strong> {candidate.name}
+                     </span>
                      </li>);
       });
       return (
               <ul style={styles.list}>
-              {items}
-              <p style={{color: '#8899A6'}}>
-              {totalVotes} votes • <a style={styles.links} onClick={() => {
-                  this.refresh();
-              }}>Refresh Results</a> • <a style={styles.links} href=''>Vote Again</a>
-              </p>
+                {items}
+                <p style={{color: '#8899A6'}}>
+                  {totalVotes} votes •
+                  <a style={styles.links}
+                     onClick={() => { this.refresh(); }}>
+                    Refresh Results
+                  </a> •
+                  <a style={styles.links} href=''>Vote Again</a>
+                </p>
               </ul>
       );
   }

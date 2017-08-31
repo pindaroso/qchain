@@ -29,3 +29,10 @@ followed by:
 ** Deploying
 
 =./deployment/bin/compose deploy <host>=
+
+** TODO
+
+- [ ] Get candidate list from contract
+- [ ] Save questionnaire text in blockchain
+- [ ] Create contract for creating more questionnaires
+- [ ] Setup =testnet=

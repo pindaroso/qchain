@@ -24,7 +24,8 @@ export default class Poll extends Component {
   render() {
     var candidates = this.props.candidates;
     var choices = candidates.map((name)=>{
-      return (<Choice key={name} name={name} onChange={evt => this.updateInput(evt)} />);
+        return (<Choice key={name} name={name}
+                        onChange={evt => this.updateInput(evt)} />);
     });
     var styles = {
       list: {

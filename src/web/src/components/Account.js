@@ -30,7 +30,8 @@ export default class Account extends Component {
         };
 
         return (
-                <a style={styles} href="/"
+                <a style={styles}
+                   href="/"
                    onMouseEnter={()=>this.toggleHover()}
                    onMouseLeave={()=>this.toggleHover()}>
                     <h1 style={styles.title}>Brandon!</h1>

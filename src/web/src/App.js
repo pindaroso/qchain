@@ -28,8 +28,8 @@ let candidates = candidateList.names;
 
 var Election = contract(electionInterface);
 
-// When going live, set web3 = new Web3(web3.currentProvider) instead.
-var web3 = new Web3(new Web3.providers.HttpProvider("http://192.168.99.100:8550"));
+var provider = new Web3.providers.HttpProvider("http://192.168.99.100:8550");
+var web3 = new Web3(provider);
 
 Election.setProvider(web3.currentProvider);
 

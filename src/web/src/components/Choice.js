@@ -16,12 +16,14 @@ export default class Choice extends Component {
       label: {
         cursor: 'pointer'
       }
-    }
+    };
+
     return (
       <li style={styles}>
         <label style={styles.label} htmlFor={slug}>
-          <input style={styles.input} onChange={onChange} type='radio' name='choice' id={slug} value={name}/>
-          {name}
+          <input style={styles.input} onChange={onChange} type='radio'
+                 name='choice' id={slug} value={name}/>
+            {name}
         </label>
       </li>
     );
