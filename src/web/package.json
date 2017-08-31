@@ -1,7 +1,7 @@
 {
-    "name": "voteth",
+    "name": "qchain",
     "version": "0.1.0",
-    "description": "A simple app to demo what's possible with Ethereum",
+    "description": "A simple Ethereum questionnaire web app",
     "private": true,
     "dependencies": {
         "async": "^2.4.0",
@@ -19,7 +19,6 @@
         "network": "testrpc -p 8550 -h 0.0.0.0",
         "migrate": "truffle migrate --network development",
         "start": "react-scripts start",
-        "build": "echo 'Before this app can be built you must resolve build directory conflicts with Truffle'",
         "test": "react-scripts test --env=jsdom",
         "eject": "react-scripts eject"
     }

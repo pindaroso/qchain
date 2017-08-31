@@ -9,8 +9,8 @@ cd src
 case "$1" in
     "dev")
         shift;
-        docker-compose build
-        docker-compose up -d
+        docker-compose -f docker-compose.dev.yml build
+        docker-compose -f docker-compose.dev.yml up -d
 
         case "$1" in
             "migrate")

@@ -7,7 +7,7 @@ export default class Button extends Component {
   }
 
   toggleHover(){
-    this.setState({hover: !this.state.hover})
+      this.setState({hover: !this.state.hover});
   }
 
   render() {
@@ -22,7 +22,8 @@ export default class Button extends Component {
       padding: '.5em 1em',
       fontSize: 14,
       cursor: 'pointer'
-    }
+    };
+
     return (
       <button
         style={styles}

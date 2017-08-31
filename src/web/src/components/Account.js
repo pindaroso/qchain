@@ -8,7 +8,7 @@ export default class Account extends Component {
   }
 
   toggleHover(){
-    this.setState({hover: !this.state.hover})
+      this.setState({hover: !this.state.hover});
   }
 
   render() {
@@ -28,7 +28,7 @@ export default class Account extends Component {
         fontSize: 18,
         margin: 0,
         paddingTop: 4,
-        textDecoration: this.state.hover?'underline':'none',
+        textDecoration: this.state.hover?'underline':'none'
       },
       subtitle: {
         fontSize: 14,
@@ -36,7 +36,8 @@ export default class Account extends Component {
         color: '#657786',
         margin: '6px 0'
       }
-    }
+    };
+
     return (
       <a style={styles}
         href="/"
