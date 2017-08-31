@@ -1,3 +1,5 @@
+[[file:https://travis-ci.org/stilesb/qchain.svg?branch=master]]
+
 * qchain
 
 Questionnaires on the Ethereum blockchain.
