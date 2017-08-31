@@ -29,7 +29,7 @@ let candidates = candidateList.names;
 var Election = contract(electionInterface);
 
 // When going live, set web3 = new Web3(web3.currentProvider) instead.
-var web3 = new Web3(new Web3.providers.HttpProvider("192.168.99.100:8550"));
+var web3 = new Web3(new Web3.providers.HttpProvider("http://192.168.99.100:8550"));
 
 Election.setProvider(web3.currentProvider);
 
@@ -77,39 +77,42 @@ class App extends Component {
     }
 
     render() {
-            var styles = {
-                wrapper: {
-                    background: '#fff',
-                    color: '#14171a',
-                    margin: '80px auto',
-                    padding: '30px 40px',
-                    borderRadius: 5,
-                    fontSize: 14,
-                    lineHeight: '18px',
-                    width: 560,
-                    boxShadow: 'box-shadow: rgba(109, 109, 109, 0.8) 1px 1px 1px'
-                },
-                question: {
-                    clear: 'both',
-                    fontSize: 27,
-                    lineHeight: '32px',
-                    fontWeight: 300,
-                    letterSpacing: '.01em',
-                    margin: '10px 0'
-                }
-            };
+        var styles = {
+            wrapper: {
+                background: '#fff',
+                color: '#14171a',
+                margin: '80px auto',
+                padding: '30px 40px',
+                borderRadius: 5,
+                fontSize: 14,
+                lineHeight: '18px',
+                maxWidth: 560,
+                boxShadow: 'box-shadow: rgba(109, 109, 109, 0.8) 1px 1px 1px'
+            },
+            question: {
+                clear: 'both',
+                fontSize: 27,
+                lineHeight: '32px',
+                fontWeight: 300,
+                letterSpacing: '.01em',
+                margin: '10px 0'
+            }
+        };
         return (
-	    <div style={styles.wrapper}>
+            <div style={styles.wrapper}>
                 <Account/>
-                <p style={styles.question}>Who is your favorite computer programmer?</p>
-		{
+                <p style={styles.question}>
+                    Who is your favorite computer programmer?
+                </p>
+                {
                     this.state.results.length ?
-                        <Results results={this.state.results} refresh={() => {
-                            this.refreshCounts();
-                        }}/> :
-                        <Poll candidates={candidates} vote={(candidate) => this.castVote(candidate)}/>
-		}
-	    </div>);
+                        <Results results={this.state.results}
+                                 refresh={() => { this.refreshCounts(); }}/> :
+                        <Poll candidates={candidates}
+                              vote={(candidate) => this.castVote(candidate)}/>
+                }
+            </div>
+        );
     }
 }
 

@@ -1,28 +1,44 @@
 #!/bin/bash
 
+set -e
+set -x
+
 export COMPOSE_PROJECT_NAME=qchain
 
-OPTIONS="dev [migrate] | clean | deploy <host>"
+OPTS_DEV="dev [migrate]"
+OPTS="$OPTS_DEV | clean | deploy <host>"
 
 cd src
 
+function dev() {
+    docker-compose -f docker-compose.dev.yml stop
+    docker-compose -f docker-compose.dev.yml rm -f
+
+    docker-compose -f docker-compose.dev.yml build
+    docker-compose -f docker-compose.dev.yml up -d
+}
+
 case "$1" in
     "dev")
+        dev
+        ;;
+    "web")
         shift;
-        docker-compose -f docker-compose.dev.yml stop
-        docker-compose -f docker-compose.dev.yml rm -f
-
-        docker-compose -f docker-compose.dev.yml build
-        docker-compose -f docker-compose.dev.yml up -d
 
         case "$1" in
             "migrate")
                 docker exec -it web npm run migrate
                 ;;
             *)
-                echo "Usage: ./deployment/bin/compose dev [migrate]"
+                echo "Usage: ./deployment/bin/compose $OPTS_DEV"
                 ;;
         esac
+        ;;
+    "build")
+        docker-compose build
+        ;;
+    "up")
+        docker-compose up -d
         ;;
     "bounce")
         docker-compose build
@@ -32,6 +48,6 @@ case "$1" in
         echo "Not yet implemented..."
         ;;
     "*")
-        echo "Usage: ./deployment/bin/compose [$OPTIONS]"
+        echo "Usage: ./deployment/bin/compose [$OPTS]"
         ;;
 esac

@@ -10,9 +10,11 @@ services:
       - ./web/migrations:/code/migrations
       - ./web/public:/code/public
       - ./web/src:/code/src
+      - ./web/build:/code/build
       - ./web/truffle.js:/code/truffle.js
       - ./web/package.json:/code/package.json
       - ./web/candidates.json:/code/candidates.json
+      - ./web/.env:/code/.env
     ports:
       - 3000:3000
     depends_on:
@@ -25,10 +27,4 @@ services:
     ports:
       - 8550:8550
     volumes:
-      - ./web/contracts:/code/contracts
-      - ./web/migrations:/code/migrations
-      - ./web/public:/code/public
-      - ./web/src:/code/src
       - ./web/truffle.js:/code/truffle.js
-      - ./web/package.json:/code/package.json
-      - ./web/candidates.json:/code/candidates.json

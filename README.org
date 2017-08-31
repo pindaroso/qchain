@@ -1,3 +1,5 @@
+[[file:/screenshot.png]]
+
 [[file:https://travis-ci.org/stilesb/qchain.svg?branch=master]]
 
 * qchain
@@ -15,6 +17,14 @@ Questionnaires on the Ethereum blockchain.
 =./deployment/bin/compose dev=
 
 *Production*
+
+=./deployment/bin/compose bounce=
+
+Or...
+
+=./deployment/bin/compose build=
+
+followed by:
 
 =./deployment/bin/compose up=
 

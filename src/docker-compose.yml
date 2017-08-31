@@ -3,32 +3,18 @@ version: "3"
 services:
   web:
     build: web
-    command: bash -c "npm run migrate && npm run build && npm start"
+    command: bash -c "npm start"
     container_name: web
     volumes:
-      - ./web/contracts:/code/contracts
-      - ./web/migrations:/code/migrations
-      - ./web/public:/code/public
-      - ./web/src:/code/src
-      - ./web/truffle.js:/code/truffle.js
-      - ./web/package.json:/code/package.json
-      - ./web/candidates.json:/code/candidates.json
+      - ./web:/code
     ports:
       - 3000:3000
     depends_on:
       - testrpc
 
-  testrpc:
-    build: web
+  geth:
+    build: geth
     command: npm run network
     container_name: testrpc
     ports:
       - 8550:8550
-    volumes:
-      - ./web/contracts:/code/contracts
-      - ./web/migrations:/code/migrations
-      - ./web/public:/code/public
-      - ./web/src:/code/src
-      - ./web/truffle.js:/code/truffle.js
-      - ./web/package.json:/code/package.json
-      - ./web/candidates.json:/code/candidates.json
