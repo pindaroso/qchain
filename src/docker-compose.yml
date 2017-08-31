@@ -4,14 +4,15 @@ services:
   web:
     build: web
     command: bash -c "npm run build && npm start"
+    container_name: web
     volumes:
-      - ./web/contracts:/code/web/contracts
-      - ./web/migrations:/code/web/migrations
-      - ./web/public:/code/web/public
-      - ./web/src:/code/web/src
-      - ./web/truffle.js:/code/web/truffle.js
-      - ./web/package.json:/code/web/package.json
-      - ./web/candidates.json:/code/web/candidates.json
+      - ./web/contracts:/code/contracts
+      - ./web/migrations:/code/migrations
+      - ./web/public:/code/public
+      - ./web/src:/code/src
+      - ./web/truffle.js:/code/truffle.js
+      - ./web/package.json:/code/package.json
+      - ./web/candidates.json:/code/candidates.json
     ports:
       - 3000:3000
     depends_on:
@@ -20,13 +21,14 @@ services:
   testrpc:
     build: web
     command: npm run network
+    container_name: testrpc
     ports:
       - 8550:8550
     volumes:
-      - ./web/contracts:/code/web/contracts
-      - ./web/migrations:/code/web/migrations
-      - ./web/public:/code/web/public
-      - ./web/src:/code/web/src
-      - ./web/truffle.js:/code/web/truffle.js
-      - ./web/package.json:/code/web/package.json
-      - ./web/candidates.json:/code/web/candidates.json
+      - ./web/contracts:/code/contracts
+      - ./web/migrations:/code/migrations
+      - ./web/public:/code/public
+      - ./web/src:/code/src
+      - ./web/truffle.js:/code/truffle.js
+      - ./web/package.json:/code/package.json
+      - ./web/candidates.json:/code/candidates.json
