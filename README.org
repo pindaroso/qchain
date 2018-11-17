@@ -1,4 +1,4 @@
-[[file:https://travis-ci.org/stilesb/qchain.svg?branch=master]]
+[[file:https://travis-ci.org/pindaroso/qchain.svg?branch=master]]
 
 * qchain
 
@@ -29,11 +29,3 @@ followed by:
 ** Deploying
 
 =./deployment/bin/compose deploy <host>=
-
-** TODO
-
-- [ ] Get candidate list from contract
-- [ ] Save questionnaire text to contract
-- [ ] Create smart contract for creating more questionnaires
-- [ ] Setup =testnet=
-- [ ] Deploy to production
