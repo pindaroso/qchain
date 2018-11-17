@@ -4,8 +4,6 @@
 
 <img title="Screenshot" src="./screenshot.png" alt="Screenshot" />
 
-![Screenshot](/screenshot.png)
-
 Questionnaires on the Ethereum blockchain.
 
 ** Requirements
