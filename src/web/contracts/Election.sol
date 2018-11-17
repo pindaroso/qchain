@@ -1,4 +1,4 @@
-pragma solidity ^0.4.6;
+pragma solidity ^0.4.2;
 
 contract Election {
   // Declare public variables in the Election contract

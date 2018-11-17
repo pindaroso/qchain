@@ -1,6 +1,10 @@
+* qchain
+
 [[file:https://travis-ci.org/pindaroso/qchain.svg?branch=master]]
 
-* qchain
+<img title="Screenshot" src="./screenshot.png" alt="Screenshot" />
+
+![Screenshot](/screenshot.png)
 
 Questionnaires on the Ethereum blockchain.
 
@@ -16,15 +20,15 @@ Questionnaires on the Ethereum blockchain.
 
 *Production*
 
-=./deployment/bin/compose bounce=
-
-Or...
-
 =./deployment/bin/compose build=
 
 followed by:
 
 =./deployment/bin/compose up=
+
+Or...
+
+=./deployment/bin/compose bounce=
 
 ** Deploying
 
