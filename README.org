@@ -2,8 +2,6 @@
 
 [[file:https://travis-ci.org/pindaroso/qchain.svg?branch=master]]
 
-<img title="Screenshot" src="./screenshot.png" alt="Screenshot" />
-
 Questionnaires on the Ethereum blockchain.
 
 ** Requirements
